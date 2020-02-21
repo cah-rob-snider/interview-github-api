@@ -3,10 +3,7 @@ package com.hackerrank.github.controller;
 import com.hackerrank.github.model.Event;
 import com.hackerrank.github.repository.EventRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -75,5 +72,12 @@ public class EventsController {
         //  If an event with the same id already exists then the HTTP response code should be 400,
         //  otherwise, the response code should be 201.
         return ResponseEntity.ok().body(new Event());
+    }
+
+    @DeleteMapping()
+    public ResponseEntity<Void> deleteAllEvents() {
+        // TODO: Erase all records: Erase all event records including actor and repository records in response to
+        //  a DELETE request at /events. The HTTP response code should be 200.
+        return ResponseEntity.ok().build();
     }
 }
