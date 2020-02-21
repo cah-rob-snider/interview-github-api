@@ -1,34 +1,35 @@
 package com.hackerrank.github.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 public class Event {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     private String type;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Actor actor;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Repo repo;
 
-    private Timestamp createdAt;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Timestamp created_at;
 
     public Event() {
     }
 
-    public Event(Long id, String type, Actor actor, Repo repo, Timestamp createdAt) {
+    public Event(Long id, String type, Actor actor, Repo repo, Timestamp created_at) {
         this.id = id;
         this.type = type;
         this.actor = actor;
         this.repo = repo;
-        this.createdAt = createdAt;
+        this.created_at = created_at;
     }
 
     public Long getId() {
@@ -63,11 +64,11 @@ public class Event {
         this.repo = repo;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
+    public Timestamp getCreated_at() {
+        return created_at;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
     }
 }

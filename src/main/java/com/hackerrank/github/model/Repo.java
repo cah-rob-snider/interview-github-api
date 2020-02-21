@@ -5,8 +5,6 @@ import javax.persistence.*;
 @Entity
 public class Repo {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     private String name;

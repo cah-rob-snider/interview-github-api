@@ -54,7 +54,7 @@ public class ResourcesControllerTest {
          *
          * Erase all the event records including actor and repository records
          */
-        mockMvc.perform(delete("/erase"))
+        mockMvc.perform(delete("/events"))
             .andExpect(status().isOk());
     }
 }
