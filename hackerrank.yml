@@ -1,0 +1,43 @@
+version: 1.0
+configuration:
+  has_webserver: true
+  readonly_paths:
+    - src/test/*
+  scoring:
+    command: "mvn clean test -Dtest=TestSuite"
+    files:
+      - "target/hackerrank-reports/TEST-com.hackerrank.github.TestSuite.xml"
+    testcase_weights:
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByRepoId": 0.09
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByNonExistingRepoIdAndActorId": 0.001
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByRepoIdAndActorId": 0.09
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEvents": 0.09
+      "com.hackerrank.github.requests.EventsControllerTest.findEventById": 0.09
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByRepoIdAndNonExistingActorId": 0.001
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByNonExistingActorId": 0.001
+      "com.hackerrank.github.requests.EventsControllerTest.createEventWithExistingId": 0.09
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByNonExistingRepoIdAndNonExistingActorId": 0.001
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByActorId": 0.09
+      "com.hackerrank.github.requests.EventsControllerTest.createEvent": 0.09
+      "com.hackerrank.github.requests.EventsControllerTest.findEventByNonExistingId": 0.001
+      "com.hackerrank.github.requests.EventsControllerTest.findAllEventsByNonExistingRepoId": 0.001
+      "com.hackerrank.github.requests.ResourcesControllerTest.eraseAllRecords": 0.09
+      "com.hackerrank.github.requests.NoResourcesEventsControllerTest.findAllEventsByNonExistingRepoId": 0.001
+      "com.hackerrank.github.requests.NoResourcesEventsControllerTest.findAllEventsByNonExistingActorId": 0.001
+      "com.hackerrank.github.requests.NoResourcesEventsControllerTest.createEvent": 0.09
+      "com.hackerrank.github.requests.NoResourcesEventsControllerTest.findEventByNonExistingId": 0.001
+      "com.hackerrank.github.requests.NoResourcesEventsControllerTest.createEventWithExistingId": 0.09
+      "com.hackerrank.github.requests.NoResourcesEventsControllerTest.findAllEventsByNonExistingRepoIdAndNonExistingActorId": 0.001
+      "com.hackerrank.github.requests.NoResourcesEventsControllerTest.findAllEvents": 0.09
+  ide_config:
+    default_open_files:
+      - "src/main/java/com/hackerrank/github/model/Actor.java"
+      - "src/main/java/com/hackerrank/github/model/Event.java"
+      - "src/main/java/com/hackerrank/github/model/Repo.java"
+      - "src/main/java/com/hackerrank/github/controller/EventsController.java"
+      - "src/main/java/com/hackerrank/github/controller/ResourcesController.java"
+      - "src/test/java/com/hackerrank/github/controller/ControllersTestSuite.java"
+    project_menu:
+      run: "mvn clean spring-boot:run"
+      install: "mvn clean install"
+      test: "mvn clean test -Dtest=TestSuite"
