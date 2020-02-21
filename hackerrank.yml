@@ -31,12 +31,10 @@ configuration:
       "com.hackerrank.github.requests.NoResourcesEventsControllerTest.findAllEvents": 0.09
   ide_config:
     default_open_files:
-      - "src/main/java/com/hackerrank/github/model/Actor.java"
-      - "src/main/java/com/hackerrank/github/model/Event.java"
-      - "src/main/java/com/hackerrank/github/model/Repo.java"
       - "src/main/java/com/hackerrank/github/controller/EventsController.java"
-      - "src/main/java/com/hackerrank/github/controller/ResourcesController.java"
-      - "src/test/java/com/hackerrank/github/controller/ControllersTestSuite.java"
+      - "src/main/java/com/hackerrank/github/repository/ActorRepository.java"
+      - "src/main/java/com/hackerrank/github/repository/EventRepository.java"
+      - "src/main/java/com/hackerrank/github/repository/RepoRepository.java"
     project_menu:
       run: "mvn clean spring-boot:run"
       install: "mvn clean install"
